@@ -1,4 +1,4 @@
-package management.contrller.user;
+package management.controller.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,11 +6,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("user/home")
+@RequestMapping("/user/")
 public class HomeController {
 	
-	@GetMapping("")
+	@GetMapping("home")
 	public ModelAndView showHome() {
-		return null;
+		ModelAndView mav = new ModelAndView("user/Home");
+		return mav;
+	}
+	
+	@GetMapping("detailsproduct")
+	public ModelAndView showDetailsProduct() {
+		ModelAndView mav = new ModelAndView("user/DetailsProduct");
+		return mav;
 	}
 }
