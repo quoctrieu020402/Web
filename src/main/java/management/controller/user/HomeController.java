@@ -12,7 +12,7 @@ public class HomeController {
 	@GetMapping("home")
 	public ModelAndView showHome() {
 		ModelAndView mav = new ModelAndView("user/Home");
-		String test = "a";
+		String test = "abc";
 		return mav;
 	}
 	
@@ -21,4 +21,5 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView("user/DetailsProduct");
 		return mav;
 	}
+	
 }
