@@ -25,16 +25,14 @@
 	<div class="wrapper">
 		
 		<%@ include file="/common/admin/nav.jsp" %>	
-		<dec:body></dec:body>
 		
+		<decorator:body></decorator:body>
 		
 		<%@ include file="/common/admin/sidebar.jsp" %>
 		
 		<%@ include file="/common/admin/footer.jsp" %>	
 		
 	</div>
-
-
 
 	<script src="<c:url value='/templates/admin/plugins/jquery/jquery.min.js'/>"></script>
 <!-- Bootstrap -->

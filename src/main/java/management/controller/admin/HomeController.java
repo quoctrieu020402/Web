@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller("abc")
 @RequestMapping("/admin/")
 public class HomeController {
+	
 	@GetMapping("home")
 	public ModelAndView Home() {
 		ModelAndView modelAndView = new ModelAndView("admin/Home");
