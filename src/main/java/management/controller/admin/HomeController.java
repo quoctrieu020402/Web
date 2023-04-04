@@ -15,4 +15,10 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView("admin/Home");
 		return modelAndView;
 	}
+	
+	@GetMapping("staff/register")
+	public ModelAndView register() {
+		ModelAndView modelAndView = new ModelAndView("admin/register");
+		return modelAndView;
+	}
 }

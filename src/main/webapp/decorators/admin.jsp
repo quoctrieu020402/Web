@@ -5,7 +5,7 @@
 <html style="height: auto;">
 <head>
 <meta charset="UTF-8">
-<title><dec:title default="Home"></dec:title></title>
+<title><decorator:title default="Home"></decorator:title></title>
 
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,6 +19,7 @@
   <link rel="stylesheet" href='<c:url value="/templates/admin/dist/css/adminlte.min.css" />'>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="<c:url value='/templates/admin/paging/jquery.twbsPagination.js'/>"></script>
+   
 </head>
 <body class="sidebar-mini sidebar-closed sidebar-collapse" style="height: auto;">
 	
@@ -43,7 +44,6 @@
 <script src="<c:url value='/templates/admin/dist/js/adminlte.js'/>"></script>
 
 
-<!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src="<c:url value='/templates/admin/plugins/jquery-mousewheel/jquery.mousewheel.js'/>"></script>
 <script src="<c:url value='/templates/admin/plugins/raphael/raphael.min.js'/>"></script>
@@ -57,6 +57,5 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<c:url value='/templates/admin/dist/js/pages/dashboard2.js'/>"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-
 </body>
 </html>

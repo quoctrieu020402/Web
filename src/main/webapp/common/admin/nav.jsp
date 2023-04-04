@@ -34,11 +34,6 @@
 					</div>
 				</form>
 			</div></li>
-
-
-
-		
-
 		
 			<li class="nav-item dropdown show"><a class="nav-link "
 				style="display: flex; justify-content: center; align-items: center;"
