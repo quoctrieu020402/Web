@@ -11,6 +11,7 @@ public class HomeController {
 	
 	@GetMapping("home")
 	public ModelAndView Home() {
+		System.out.println("hello");
 		ModelAndView modelAndView = new ModelAndView("admin/Home");
 		return modelAndView;
 	}
