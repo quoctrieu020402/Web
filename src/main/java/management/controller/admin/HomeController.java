@@ -14,6 +14,7 @@ public class HomeController {
 		System.out.println("hello");
 		System.out.println("test");
 		System.out.println("test1");
+		System.out.println("test2");
 		ModelAndView modelAndView = new ModelAndView("admin/Home");
 		return modelAndView;
 	}
