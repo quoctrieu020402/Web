@@ -13,6 +13,7 @@ public class HomeController {
 	public ModelAndView Home() {
 		System.out.println("hello");
 		System.out.println("test");
+		System.out.println("test1");
 		ModelAndView modelAndView = new ModelAndView("admin/Home");
 		return modelAndView;
 	}
