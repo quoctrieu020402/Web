@@ -26,17 +26,10 @@ public class RoleDaoImpl implements IRoleDao {
 
 			s.beginTransaction();
 			
-			String hql = "INSERT INTO CHUC_VU (MACV,TENCV) = ? SELECT firstName, lastName FROM CHUC_VU";
 			
-			Query query = s.createQuery(hql);
+			String saveRole = (String) s.save(role);
 			
-			int result = query.executeUpdate();
-			
-            System.out.println("Rows affected: " + result);
-			
-//			String saveRole = (String) s.save(role);
-//			
-//			System.out.println(saveRole);
+			System.out.println(saveRole);
 
 			s.getTransaction().commit();
 
