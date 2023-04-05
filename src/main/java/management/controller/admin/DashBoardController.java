@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller("")
 @RequestMapping("/admin/")
-public class dashBoardController {
+public class DashBoardController {
 	@GetMapping("dashboard")
 	public ModelAndView dashboard() {
 		ModelAndView modelAndView = new ModelAndView("admin/dashboard");

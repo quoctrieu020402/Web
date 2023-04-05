@@ -27,9 +27,9 @@ public class RoleDaoImpl implements IRoleDao {
 
 			s.beginTransaction();
 			
-			String saveRole = (String) s.save(role);
+
+	
 			
-			System.out.println(saveRole);
 
 			s.getTransaction().commit();
 

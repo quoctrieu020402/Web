@@ -29,6 +29,8 @@ public class CustomerDaoImpl implements ICustomerDao{
 			
 			System.out.println(saveCustomer);
 			
+			System.out.println(saveCustomer);
+			
 			s.getTransaction().commit();
 			
 			return null;
