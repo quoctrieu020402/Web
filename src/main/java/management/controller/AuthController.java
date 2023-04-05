@@ -31,14 +31,18 @@ public class AuthController {
 		role.setId("USER");
 		
 		customer.setId("MKH1");
+		
 		customer.setName("Trieu");
+		
 		customer.setSurname("Bui");
+		
+		customer.setAccount(account);
 		
 		account.setRole(role);
 		
 		account.setCustomer(customer);
 		
-		accountDao.createCustomer(account);
+		accountDao.createAccountOfCustomer(account);
 		
 		return mav;
 	}
