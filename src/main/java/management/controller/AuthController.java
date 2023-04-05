@@ -24,6 +24,8 @@ public class AuthController {
 		Customer customer = new Customer();
 		Role role = new Role();
 		
+		System.out.println("test");
+		
 		account.setEmail("kansan0135@gmail.com");
 		account.setPassword("123456");
 		
