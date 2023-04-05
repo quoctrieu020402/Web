@@ -24,15 +24,15 @@ public class AuthController {
 		Customer customer = new Customer();
 		Role role = new Role();
 		
-		System.out.println("test");
+		System.out.println("test1");
 		
-		account.setEmail("kansan0135@gmail.com");
+		account.setEmail("kansan@gmail.com");
 		account.setPassword("123456");
 		
 		role.setName("USER");
 		role.setId("USER");
 		
-		customer.setId("MKH1");
+		customer.setId("MKH3");
 		
 		customer.setName("Trieu");
 		
