@@ -20,23 +20,16 @@ public class RoleDaoImpl implements IRoleDao {
 	@Override
 	public Role createRole(Role role) {
 		
+		
 		Session s = sessionFactory.openSession();
 
 		try {
 
 			s.beginTransaction();
 			
-			String hql = "INSERT INTO CHUC_VU (MACV,TENCV) = ? SELECT firstName, lastName FROM CHUC_VU";
+			String saveRole = (String) s.save(role);
 			
-			Query query = s.createQuery(hql);
-			
-			int result = query.executeUpdate();
-			
-            System.out.println("Rows affected: " + result);
-			
-//			String saveRole = (String) s.save(role);
-//			
-//			System.out.println(saveRole);
+			System.out.println(saveRole);
 
 			s.getTransaction().commit();
 

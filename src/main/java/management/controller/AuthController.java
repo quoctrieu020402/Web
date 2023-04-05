@@ -16,7 +16,7 @@ public class AuthController {
 	@Autowired
 	private IAccountDao accountDao;
 	
-	@GetMapping("/user/sigup")
+	@GetMapping("/user/signup")
 	public ModelAndView registerCustomer() {
 		ModelAndView mav = new ModelAndView("auth/signup");
 		
@@ -31,14 +31,18 @@ public class AuthController {
 		role.setId("USER");
 		
 		customer.setId("MKH1");
+		
 		customer.setName("Trieu");
+		
 		customer.setSurname("Bui");
+		
+		customer.setAccount(account);
 		
 		account.setRole(role);
 		
 		account.setCustomer(customer);
 		
-		accountDao.createCustomer(account);
+		accountDao.createAccountOfCustomer(account);
 		
 		return mav;
 	}

@@ -144,5 +144,9 @@ public class Customer {
 	public void setDetailsCarts(List<DetailsCart> detailsCarts) {
 		this.detailsCarts = detailsCarts;
 	}
+
+
+	
+	
 	
 }

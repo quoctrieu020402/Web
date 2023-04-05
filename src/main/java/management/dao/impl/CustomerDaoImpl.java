@@ -22,15 +22,20 @@ public class CustomerDaoImpl implements ICustomerDao{
 		Session s = sessionFactory.openSession();
 		
 		try {
+			
 			s.beginTransaction();
 			
-			Customer saveCustomer = (Customer) s.save(customer);
+			String saveCustomer = (String) s.save(customer);
+			
+			System.out.println(saveCustomer);
 			
 			s.getTransaction().commit();
 			
-			return saveCustomer;
+			return null;
 		} catch (Exception e) {
+			
 			System.out.println(e);
+			
 			s.getTransaction().rollback();
 			
 		} finally {

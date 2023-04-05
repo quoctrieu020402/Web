@@ -25,7 +25,7 @@ public class AccountDaoImpl implements IAccountDao{
 	private IRoleDao roleDao;
 
 	@Override
-	public Account createCustomer(Account account) {
+	public Account createAccountOfCustomer(Account account) {
 		
 		Session s = sessionFactory.openSession();
 		
@@ -39,15 +39,17 @@ public class AccountDaoImpl implements IAccountDao{
 				
 			}
 			
-			Account saveAccount =  (Account) s.save(account);
+			String saveAccount =  (String) s.save(account);
 			
-			account.getCustomer().setAccount(account);
+			String saveCustomer =  (String) s.save(account.getCustomer());
 			
-			customerDao.createCustomer(account.getCustomer());
+			System.out.println(saveAccount);
+			
+			System.out.println(saveCustomer);
 			
 			s.getTransaction().commit();
 			
-			return saveAccount;
+			return null;
 			
 		} catch (Exception e) {
 			System.out.println(e);
