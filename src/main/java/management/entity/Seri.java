@@ -3,6 +3,7 @@ package management.entity;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -54,5 +55,11 @@ public class Seri {
 	joinColumns = @JoinColumn(name = "SOSERI"),
 	inverseJoinColumns = @JoinColumn(name = "MAPT"))
 	private List<ProductReturnVoucher>  returnVouchers = new ArrayList<ProductReturnVoucher>();
+	
+	@OneToMany(mappedBy = "seri")
+	private Set<DetailsReturnVoucher> detailsReturnVouchers; 
+	
+	@OneToMany(mappedBy = "seri")
+	private Set<DetailsExchangeVoucher> detailsExchangeVouchers;
 
 }

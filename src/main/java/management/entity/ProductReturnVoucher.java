@@ -3,6 +3,7 @@ package management.entity;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -37,4 +39,7 @@ public class ProductReturnVoucher {
 	@ManyToOne
 	@JoinColumn(name = "MASHIP")
 	private Ship ship;
+	
+	@OneToMany(mappedBy = "returnVoucher")
+	private Set<DetailsReturnVoucher> detailsReturnVouchers; 
 }

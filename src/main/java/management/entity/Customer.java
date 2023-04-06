@@ -27,7 +27,7 @@ public class Customer {
 	@Column(name = "TEN", length = 50)
 	private String name;
 	
-	@Column(name = "STD", length = 10)
+	@Column(name = "SDT", length = 10)
 	private String phoneNumber;
 	
 	@Column(name = "GIOITINH", length = 10)
