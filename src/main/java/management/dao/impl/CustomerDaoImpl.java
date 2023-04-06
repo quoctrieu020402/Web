@@ -1,5 +1,8 @@
 package management.dao.impl;
 
+import java.util.Iterator;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +48,20 @@ public class CustomerDaoImpl implements ICustomerDao{
 		}
 		
 		return null;
+	}
+
+	@Override
+	public Long getNumberOfCustomer() {
+		
+		Session s = sessionFactory.openSession();
+		
+		String hql = "select count(kh.id) from Customer kh";
+		
+		Query query = s.createQuery(hql);
+		
+		Iterator count = query.iterate();
+		
+		return (Long) count.next();
 	}
 	
 }
