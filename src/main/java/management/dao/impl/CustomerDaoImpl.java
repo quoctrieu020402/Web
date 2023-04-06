@@ -1,6 +1,10 @@
 package management.dao.impl;
 
+<<<<<<< HEAD
 import java.util.Iterator;
+=======
+import java.util.List;
+>>>>>>> branch 'master' of https://github.com/quoctrieu020402/Web.git
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -51,6 +55,7 @@ public class CustomerDaoImpl implements ICustomerDao{
 	}
 
 	@Override
+<<<<<<< HEAD
 	public Long getNumberOfCustomer() {
 		
 		Session s = sessionFactory.openSession();
@@ -62,6 +67,15 @@ public class CustomerDaoImpl implements ICustomerDao{
 		Iterator count = query.iterate();
 		
 		return (Long) count.next();
+=======
+	public List<Customer> getListCustomer() {
+		Session session = sessionFactory.openSession();
+		String hgl = "From Customer";
+		Query query = session.createQuery(hgl);
+		List<Customer> list = query.list();
+		return list;
+		
+>>>>>>> branch 'master' of https://github.com/quoctrieu020402/Web.git
 	}
 	
 }
