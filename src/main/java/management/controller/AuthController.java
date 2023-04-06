@@ -48,7 +48,7 @@ public class AuthController {
 		
 		mav.addObject("checkPassword", false);
 		
-		// validation account
+		// validation account test
 		
 		if ( !password.equals(userForm.getPassword())) {
 			mav.addObject("checkPassword", true);
