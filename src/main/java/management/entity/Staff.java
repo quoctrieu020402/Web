@@ -61,4 +61,121 @@ public class Staff {
 	
 	@OneToMany(mappedBy = "staff")
 	private List<DetailsUpdatePrice> detailsUpdatePrices = new ArrayList<DetailsUpdatePrice>();
+
+	public Staff() {
+		super();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	public List<Promotion> getPromotions() {
+		return promotions;
+	}
+
+	public void setPromotions(List<Promotion> promotions) {
+		this.promotions = promotions;
+	}
+
+	public List<ProductExchangeVoucher> getExchangeVouchers() {
+		return exchangeVouchers;
+	}
+
+	public void setExchangeVouchers(List<ProductExchangeVoucher> exchangeVouchers) {
+		this.exchangeVouchers = exchangeVouchers;
+	}
+
+	public List<Warranty> getWarranties() {
+		return warranties;
+	}
+
+	public void setWarranties(List<Warranty> warranties) {
+		this.warranties = warranties;
+	}
+
+	public List<Bill> getBills() {
+		return bills;
+	}
+
+	public void setBills(List<Bill> bills) {
+		this.bills = bills;
+	}
+
+	public List<DetailsUpdatePrice> getDetailsUpdatePrices() {
+		return detailsUpdatePrices;
+	}
+
+	public void setDetailsUpdatePrices(List<DetailsUpdatePrice> detailsUpdatePrices) {
+		this.detailsUpdatePrices = detailsUpdatePrices;
+	}
+	
 }

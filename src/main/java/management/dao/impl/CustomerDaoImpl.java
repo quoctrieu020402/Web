@@ -1,5 +1,8 @@
 package management.dao.impl;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +48,16 @@ public class CustomerDaoImpl implements ICustomerDao{
 		}
 		
 		return null;
+	}
+
+	@Override
+	public List<Customer> getListCustomer() {
+		Session session = sessionFactory.openSession();
+		String hgl = "From Customer";
+		Query query = session.createQuery(hgl);
+		List<Customer> list = query.list();
+		return list;
+		
 	}
 	
 }
