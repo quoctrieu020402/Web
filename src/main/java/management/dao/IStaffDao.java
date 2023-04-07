@@ -1,4 +1,4 @@
-package management.dao.impl;
+package management.dao;
 
 import java.util.List;
 

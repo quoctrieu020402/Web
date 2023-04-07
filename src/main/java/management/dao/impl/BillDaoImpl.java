@@ -16,6 +16,7 @@ public class BillDaoImpl implements IBillDao{
 
 	@Autowired
 	SessionFactory sessionFactory;
+	
 	@Override
 	public long getCountBill() {
 		Session session=sessionFactory.openSession();

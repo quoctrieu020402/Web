@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import management.dao.IBillDao;
 import management.dao.ICustomerDao;
-import management.dao.impl.IStaffDao;
+import management.dao.IStaffDao;
 
 
 @Controller("abc")
