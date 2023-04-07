@@ -27,6 +27,16 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  
+  
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/employee.css">
+  <link rel="stylesheet" href="css/detail-test.css">
+  <link rel="stylesheet" href="css/fix-test.css">
+  <link rel="stylesheet" href="<c:url value='/templates/css/alertify.min.css'/>" />
+  
+  
+  
 </head>
 <body>
 	<%@ include file="/common/admin/nav.jsp"%>
@@ -84,8 +94,10 @@
 											<th>SĐT</th>
 											<th>EMAIL</th>
 											<th>CHỨC VỤ</th>
-											
-											<th></th>
+
+											<th><a type="button" class="btn btn  btn-success float-right" style="color:white "
+												data-toggle="modal" data-target="#modal-add"> Thêm Mới
+											</a></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -188,6 +200,111 @@
 
 																			</ul>
 																		</div>
+																		<!-- /.card-body -->
+																	</div>
+																</div>
+																<div class="modal-footer justify-content-between">
+																	<button type="button" class="btn btn-default"
+																		data-dismiss="modal">Đóng</button>
+
+																</div>
+															</div>
+															<!-- /.modal-content -->
+														</div>
+														<!-- /.modal-dialog -->
+													</div></td>
+											</tr>
+											
+													<div class="modal fade" id="modal-add">
+														<div class="modal-dialog modal-add">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<h4 class="modal-title">Thêm Nhân Viên</h4>
+																	<button type="button" class="close"
+																		data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																	</button>
+																</div>
+																<div class="modal-body">
+																	<div class="card card-primary card-outline">
+																		<div class="card-body box-profile">
+
+
+
+																	<form class="contener1-fix" method="POST"
+																		action="/QuanLyRapChieuPhim/admin/employee/add.htm"
+																		modelAttribute="taikhoan">
+																		<div class="body-full-fix">
+
+																			<div class="body-fix">
+																				<div class="body-right-fix">
+																					
+																					
+																				</div>
+																				<div class="body-left-fix">
+
+																					<div class="detail-info-fix">
+																						<p class="detail-info-top-fix">Email Tài Khoản</p>
+																						<input name="email" type="email"
+																							class="detail-info-buton-fix" required />
+																						<form:errors path="email"></form:errors>
+																					</div>
+
+																					<div class="detail-info-fix">
+																						<p class="detail-info-top-fix">Tên Nhân Viên</p>
+																						<input name="tenNV" class="detail-info-buton-fix"
+																							required />
+																						<form:errors path="tenNV"></form:errors>
+																					</div>
+																					<div class="detail-info-fix">
+																						<p class="detail-info-top-fix">CMND</p>
+																						<input name="cmnd" class="detail-info-buton-fix"
+																							required />
+																						<form:errors path="cmnd"></form:errors>
+																					</div>
+																					<div class="detail-info-fix">
+																						<p class="detail-info-top-fix">SĐT</p>
+																						<input name="soDT" class="detail-info-buton-fix"
+																							required />
+																						<form:errors path="soDT"></form:errors>
+
+																					</div>
+																					<div class="detail-info-fix">
+																						<p class="detail-info-top-fix">Địa Chỉ</p>
+																						<input name="diaChi" class="detail-info-buton-fix"
+																							required />
+																						<form:errors path="diaChi"></form:errors>
+																					</div>
+																					<div class="same-fix">
+																						<div class="detail-info-fix-left">
+																							<p class="detail-info-top-fix">Ngày Sinh</p>
+
+																							<input type="date" name="ngaySinh"
+																								class="input-name-fix" required />
+
+
+																						</div>
+																						<div class="detail-info-fix-right">
+																							<p class="detail-info-top-fix">Giới Tính</p>
+																							<div class="input-fix">
+																								<select name="gioiTinh">
+																									<option value="false">Nữ</option>
+																									<option value="true">Nam</option>
+																								</select>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="body-botton-fix">
+																				<button class="button-fix-f" type="submit">Thêm
+																					Mới</button>
+																			</div>
+																		</div>
+
+																	</form>
+
+																</div>
 																		<!-- /.card-body -->
 																	</div>
 																</div>
