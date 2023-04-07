@@ -36,9 +36,6 @@ public class ProductExchangeVoucher {
 	@JoinColumn(name = "MANV")
 	private Staff staff;
 	
-	@ManyToMany(mappedBy = "exchangeVouchers")
-	private List<Seri> seris = new ArrayList<Seri>();
-	
 	@OneToMany(mappedBy = "exchangeVoucher")
 	private Set<DetailsExchangeVoucher> detailsExchangeVouchers; 
 	

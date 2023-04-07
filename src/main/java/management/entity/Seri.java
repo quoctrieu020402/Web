@@ -44,18 +44,6 @@ public class Seri {
 	@OneToMany(mappedBy = "seri")
 	private List<Warranty> warranties = new ArrayList<Warranty>();
 	
-	@ManyToMany
-	@JoinTable(name = "CT_SERI_DOI",
-	joinColumns = @JoinColumn(name = "SOSERI"),
-	inverseJoinColumns = @JoinColumn(name = "MAPD"))
-	private List<ProductExchangeVoucher> exchangeVouchers = new ArrayList<ProductExchangeVoucher>();
-
-	@ManyToMany
-	@JoinTable(name = "CT_SERI_TRA",
-	joinColumns = @JoinColumn(name = "SOSERI"),
-	inverseJoinColumns = @JoinColumn(name = "MAPT"))
-	private List<ProductReturnVoucher>  returnVouchers = new ArrayList<ProductReturnVoucher>();
-	
 	@OneToMany(mappedBy = "seri")
 	private Set<DetailsReturnVoucher> detailsReturnVouchers; 
 	

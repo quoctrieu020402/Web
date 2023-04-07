@@ -33,9 +33,6 @@ public class ProductReturnVoucher {
 	@JoinColumn(name = "MAPD",referencedColumnName = "MAPD")
 	private ProductExchangeVoucher productExchangeVoucher;
 	
-	@ManyToMany(mappedBy = "returnVouchers")
-	private List<Seri> seris = new ArrayList<Seri>();
-	
 	@ManyToOne
 	@JoinColumn(name = "MASHIP")
 	private Ship ship;
