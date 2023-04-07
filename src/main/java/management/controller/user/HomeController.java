@@ -15,11 +15,4 @@ public class HomeController {
 		return mav;
 	}
 	
-	@GetMapping("detailsproduct")
-	public ModelAndView showDetailsProduct() {
-		ModelAndView mav = new ModelAndView("user/DetailsProduct");
-		return mav;
-	}
-	
-	
 }

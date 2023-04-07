@@ -73,7 +73,7 @@
 				action="/j_spring_security_check" method="post">
 
 				<div class="wrap-input100 validate-input"
-					data-validate="Enter username">
+					data-validate="Enter Email">
 					<input class="input100" type="text" name="j_username"
 						placeholder="Username"> <span class="focus-input100"
 						data-placeholder="&#xe82a;"></span>

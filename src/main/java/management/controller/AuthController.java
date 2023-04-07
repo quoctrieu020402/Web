@@ -19,6 +19,14 @@ public class AuthController {
 	@Autowired
 	private IAccountDao accountDao;
 	
+	@GetMapping("/login")
+	public ModelAndView signin() {
+		
+		ModelAndView mav = new ModelAndView("auth/login");
+		
+		return mav;
+	}
+	
 	@GetMapping("/register")
 	public ModelAndView signup() {
 		
@@ -65,32 +73,6 @@ public class AuthController {
 		mav.addObject("message", message);
 		
 		return mav;
-		
-//		Account account = new Account();
-//		Customer customer = new Customer();
-//		Role role = new Role();
-//		
-//		System.out.println("test1");
-//		
-//		account.setEmail("kansan@gmail.com");
-//		account.setPassword("123456");
-//		
-//		role.setName("USER");
-//		role.setId("USER");
-//		
-//		customer.setId("MKH3");
-//		
-//		customer.setName("Trieu");
-//		
-//		customer.setSurname("Bui");
-//		
-//		customer.setAccount(account);
-//		
-//		account.setRole(role);
-//		
-//		account.setCustomer(customer);
-//		
-//		accountDao.createAccountOfCustomer(account);
 		
 	}
 }
