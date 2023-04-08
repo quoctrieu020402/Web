@@ -20,15 +20,29 @@ public class ProductDaoImpl implements IProductDao{
 	private SessionFactory sessionFactory;
 
 	@Override
-	public List<Product> getProductIsAcctive(boolean b) {
+	public List<Product> getProductsIsAcctive(boolean b) {
 		
 		Session s = sessionFactory.openSession();
 		
-		String hql = "select sp from Product sp left join sp.seri se where se.status = ?";
+		String hql = "select sp from Product sp where sp.status = ?";
 		
 		Query query = s.createQuery(hql);
 		
 		query.setParameter(0, b);
+		
+		return query.list();
+	}
+
+	@Override
+	public List<Product> getProductsOfCategory(String categoryId) {
+		
+		Session s = sessionFactory.openSession();
+		
+		String hql = "select sp from Product sp where sp.category.id = ?";
+		
+		Query query = s.createQuery(hql);
+		
+		query.setParameter(0, categoryId);
 		
 		return query.list();
 	}

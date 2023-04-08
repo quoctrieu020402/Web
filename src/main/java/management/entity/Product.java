@@ -25,9 +25,6 @@ public class Product {
 	@Column(name = "TENSP", length = 10)
 	private String name;
 	
-	@Column(name = "KICHTHUOC", length = 10)
-	private String size;
-	
 	@Column(name = "HINHANH", length = 10)
 	private String image;
 	
@@ -36,6 +33,9 @@ public class Product {
 	
 	@Column(name = "HANG", length = 100)
 	private String branch;
+	
+	@Column(name = "TRANGTHAI")
+	private boolean status;
 	
 	@Column(name = "THOIGIANBH", length = 10)
 	private Date warrantyPeriod;
@@ -46,14 +46,14 @@ public class Product {
 	@OneToOne(mappedBy = "product")
 	private Seri seri;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "MADM")
 	private Category category;
 	
 	@OneToMany(mappedBy = "product")
 	private Set<DetailsPromotion> detailsPromotions; 
 	
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
 	private List<DetailsUpdatePrice> detailsUpdatePrices = new ArrayList<DetailsUpdatePrice>();
 
 	public Product() {
@@ -74,14 +74,6 @@ public class Product {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getSize() {
-		return size;
-	}
-
-	public void setSize(String size) {
-		this.size = size;
 	}
 
 	public String getImage() {
@@ -155,6 +147,15 @@ public class Product {
 	public void setDetailsUpdatePrices(List<DetailsUpdatePrice> detailsUpdatePrices) {
 		this.detailsUpdatePrices = detailsUpdatePrices;
 	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	
 	
 	
 }

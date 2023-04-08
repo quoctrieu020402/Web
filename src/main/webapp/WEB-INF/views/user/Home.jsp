@@ -29,8 +29,8 @@
 			<div class="col l-12 mt-20">
 				<div class="listProdcuct">
 					<div class="row">
-						<div class="col l-3">
-							<c:forEach var="product" items="${listOfProduct}">
+						<c:forEach var="product" items="${listOfProduct}">
+							<div class="col l-3">
 								<div class="product">
 									<img class="product__img"
 										src="https://cdn.tgdd.vn/Products/Images/42/22701/dien-thoai-di-dong-Nokia-1280-dienmay.com-l.jpg"
@@ -38,22 +38,25 @@
 									<h1 class="roduct__bracnh">${product.branch}</h1>
 									<h2 class="roduct__name">${product.name}</h2>
 									<div class="product__price">
-										<strong>100₫</strong>
-									</div>
-									<div class="product__size">
-										<strong>${product.size}</strong>
-									</div>
-									<div class="product__color">
-										<strong>${product.color}</strong>
+										<strong> <c:forEach varStatus="status" var="t"
+												items="${product.detailsUpdatePrices}">
+												
+												<c:if test="${status.isLast()}">
+													${t.price}
+												</c:if>
+												
+											</c:forEach>
+
+										</strong>
 									</div>
 									<div class="product__tooltip">
 										<button class="product__tooltip--btn">
-											<span class="product__tooltip--text">Thêm vào giỏ</span> +
+											<span class="product__tooltip--text">Xem chi tiết sản phẩm</span> +
 										</button>
 									</div>
 								</div>
-							</c:forEach>
-						</div>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
 			</div>

@@ -31,4 +31,52 @@ public class DetailsUpdatePrice {
 	
 	@OneToMany(mappedBy = "detailsUpdatePrice")
 	private List<DetailsCart> detailsCarts = new ArrayList<DetailsCart>();
+
+	public DetailsUpdatePrice() {
+		super();
+	}
+
+	public DetailsUpdatePricePK getId() {
+		return id;
+	}
+
+	public void setId(DetailsUpdatePricePK id) {
+		this.id = id;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public Staff getStaff() {
+		return staff;
+	}
+
+	public void setStaff(Staff staff) {
+		this.staff = staff;
+	}
+
+	public List<DetailsCart> getDetailsCarts() {
+		return detailsCarts;
+	}
+
+	public void setDetailsCarts(List<DetailsCart> detailsCarts) {
+		this.detailsCarts = detailsCarts;
+	}
+	
+	
+	
+	
 }
