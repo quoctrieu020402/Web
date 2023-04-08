@@ -38,7 +38,7 @@
 									<h1 class="roduct__bracnh">${product.branch}</h1>
 									<h2 class="roduct__name">${product.name}</h2>
 									<div class="product__price">
-										<strong>${product.price}₫</strong>
+										<strong>100₫</strong>
 									</div>
 									<div class="product__size">
 										<strong>${product.size}</strong>

@@ -28,9 +28,6 @@ public class Product {
 	@Column(name = "KICHTHUOC", length = 10)
 	private String size;
 	
-	@Column(name = "GIA")
-	private Double price;
-	
 	@Column(name = "HINHANH", length = 10)
 	private String image;
 	
@@ -85,14 +82,6 @@ public class Product {
 
 	public void setSize(String size) {
 		this.size = size;
-	}
-
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
 	}
 
 	public String getImage() {
