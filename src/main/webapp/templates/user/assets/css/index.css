@@ -114,6 +114,7 @@
     cursor: pointer;
 }
 
+
 .nav__list__item--link{
     display: flex;
     align-items: center;
@@ -136,6 +137,10 @@
 .product__img:hover{
     margin: 5px auto 25px;
 
+}
+
+.roduct__bracnh{
+    padding: 5px 10px;
 }
 
 .roduct__name{
