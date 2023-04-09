@@ -18,11 +18,12 @@
                 <form
                   class="header__search__form"
                   method="get"
-                  action="index.html"
+                  action="home"
                 >
                   <div class="header__search__form--content flex-center">
                     <input
                       id="search-box"
+                      value="${paging.search}"
                       name="search"
                       autocomplete="off"
                       type="text"

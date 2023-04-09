@@ -1,3 +1,4 @@
+<%@ include file="/common/taglib.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -60,7 +61,66 @@
 					</div>
 				</div>
 			</div>
+			<div class="col l-12">
+				
+				<c:choose>
+   					<c:when test="${checkCategoryId != null}">
+   						<form action="<c:url value='/user/home/${checkCategoryId}'/>" id="formSubmit" method="get">
+								<div class="card-footer clearfix">
+								<ul id="pagination-demo" class="pagination-lg"></ul>
+								<input type="hidden" value="1" id="page" name="page" /> <input
+									type="hidden" value="1" id="limit" name="limit" />
+							</div>
+						</form>
+   					</c:when>
+   					
+   					<c:when test="${checkSearch != null}">
+   						<form action="<c:url value='/user/home?search=${checkSearch}'/>" id="formSubmit" method="get">
+								<div class="card-footer clearfix">
+								<ul id="pagination-demo" class="pagination-lg"></ul>
+								<input type="hidden" value="1" id="page" name="page" /> <input
+									type="hidden" value="1" id="limit" name="limit" />
+							</div>
+						</form>
+   					</c:when> 
+   					
+   					<c:otherwise>
+   						<form action="<c:url value='/user/home'/>" id="formSubmit" method="get">
+							<div class="card-footer clearfix">
+								<ul id="pagination-demo" class="pagination-lg"></ul>
+								<input type="hidden" value="1" id="page" name="page" /> <input
+									type="hidden" value="1" id="limit" name="limit" />
+							</div>
+						</form>
+   					</c:otherwise>    
+				</c:choose>
+			
+				
+			</div>
 		</div>
 	</div>
+	
+	
+	<script>
+		
+		var totalPages = ${paging.totalPage};
+		var currentPage = ${paging.page};
+	
+		$('#pagination-demo').twbsPagination({
+			totalPages : totalPages,
+			visiblePages : 10,
+			startPage : currentPage,
+			onPageClick : function(event, page) {
+				if (currentPage != page) {
+					$('#limit').val(1);
+					$('#page').val(page);
+					$('#formSubmit').submit();
+				}
+		}
+	});
+
+		
+	</script>
+	
 </body>
 </html>
