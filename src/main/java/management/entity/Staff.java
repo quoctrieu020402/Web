@@ -30,9 +30,20 @@ public class Staff {
 	@Column(name = "STD", length = 10)
 	private String phoneNumber;
 	
+	@Column(name = "CMND", length = 10)
+	private String cMND;
+	
 	@Column(name = "GIOITINH", length = 10)
 	private String gender;
 	
+	public String getcMND() {
+		return cMND;
+	}
+
+	public void setcMND(String cMND) {
+		this.cMND = cMND;
+	}
+
 	@Column(name = "DIACHI", length = 1000)
 	private String address;
 	

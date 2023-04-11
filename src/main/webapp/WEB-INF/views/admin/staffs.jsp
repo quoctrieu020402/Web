@@ -74,7 +74,7 @@
 								<h3 class="card-title">Tìm Kiếm</h3>
 
 								<div class="card-tools">
-									<div class="input-group input-group-sm" style="width: 150px;">
+									<div class="input-group input-group-sm" style="width: 250px;">
 										<input type="text" name="search" id="search"
 											value="${paging.search}" class="form-control float-right"
 											placeholder="Search">
@@ -88,11 +88,11 @@
 							</div>
 							<!-- /.card-header -->
 							<div class="card-body">
-								<table class="table table-bordered">
+								<table class="table  table-striped table-hover">
 									<thead>
 										<tr>
 											<th>ID</th>
-											<th>HỌ TÊN</th>
+											<th>HỌ VÀ TÊN</th>
 											<th>GIỚI TÍNH</th>
 											<th>SĐT</th>
 											<th>EMAIL</th>
@@ -113,35 +113,38 @@
 												<td>${staff.getPhoneNumber()}</td>
 												<td>${staff.account.getEmail()}</td>
 												<td>${staff.account.role.getName()}</td>
-												<td><a class="btn btn-primary" data-toggle="modal"
+												<td><a class="btn btn-primary float-right" style="margin: 0 2px;" data-toggle="modal"
 													data-target="#modal-${staff.getId()}"> <i class="fas fa-info-circle"></i>
-												</a> <a
-													href="/admin/management/staff/edit?id=${staff.getAccount().getEmail()}"
-													class="btn btn-info"> <i class="fas fa-edit"></i></a> <a
-													class="btn btn-danger" data-toggle="modal"
-													data-target="#modal-default"> <i class="fas fa-trash"></i></a>
+												</a> 
+												<!-- href="/admin/management/staff/edit?id=${staff.getAccount().getEmail()}" -->
+												<a
+												
+													
+													class="btn btn-info float-right" style="margin: 0 2px;"data-toggle="modal"
+													data-target="#modal-edit-${staff.getId()}"> <i class="fas fa-edit"></i></a> <a
+													class="btn btn-danger float-right" style="margin: 0 2px;" data-toggle="modal"
+													data-target="#modal-default "> <i class="fas fa-trash"></i></a>
 											</tr>
 											
 											
 								<div class="modal fade" id="modal-default">
 									<div class="modal-dialog">
 										<div class="modal-content">
-											<div class="modal-header">
+											<div class="modal-header " style="background: #ef2d3f;color: white;">
 												<h4 class="modal-title">Thông báo</h4>
-												<button type="button" class="close" data-dismiss="modal"
-													aria-label="Close">
-													<span aria-hidden="true"></span>
-												</button>
-											</div>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
 											<div class="modal-body">
-												<p>Bạn có đồng ý xoá nhân viên không?</p>
+												<p>Xác nhận cho nhân viên nghỉ việc</p>
 											</div>
-											<div class="modal-footer justify-content-between">
+											<div class="modal-footer  ">
 												<a
 													href="/admin/management/staff/remove?id=${staff.getAccount().getEmail()}"
-													type="button" class="btn btn-primary">Đống ý</a>
-												<button type="button" class="btn btn-default"
-													data-dismiss="modal">Đóng</button>
+													type="button" class="btn btn-primary float-right">Đồng ý</a>
+												
 											</div>
 										</div>
 										<!-- /.modal-content -->
@@ -151,7 +154,7 @@
 											<div class="modal fade" id="modal-${staff.getId()}">
 												<div class="modal-dialog modal-lg">
 													<div class="modal-content ">
-														<div class="  modal-header ">
+														<div class="  modal-header " style="background: #2c83e0;color: white;">
 															<h4 class="modal-title ">Thông Tin Nhân Viên</h4>
 															<button type="button" class="close" data-dismiss="modal"
 																aria-label="Close">
@@ -229,7 +232,7 @@
 												role="dialog" aria-hidden="true">
 												<div class="modal-dialog modal-lg modal-dialog-centered">
 													<div class="modal-content">
-														<div class="modal-header">
+														<div class="modal-header" style="background: #0f982e;color: white;">
 															<h4 class="modal-title" id="myCenterModalLabel">Thêm
 																Mới Nhân Viên</h4>
 															<button type="button" class="btn btn-default"
@@ -281,6 +284,31 @@
 																							<option value="true">Nam</option>
 																						</select>
 																					</div>
+																					
+																					
+																					
+																					
+																					<div class="form-group">
+																						<label for="role">Chức vụ</label> <select
+																							class="custom-select" id="role" name="role">
+																							<option value="2">Nhân Viên</option>
+																							<option value="1">Quản Lý</option>
+																							
+																							
+																							<!-- Các tùy chọn khác của chức vụ nhân viên -->
+																						</select>
+																					</div>
+																					<div class="form-group">
+																						<label for="anh">Ảnh</label>
+																						<div class="custom-file">
+																							<input type="file" name="anh" id="anh"
+																								class="custom-file-input"> <label
+																								class="custom-file-label" for="anh">Chọn
+																								ảnh</label>
+																						</div>
+																						<div id="thongbao" class="mt-2"></div>
+																						<!-- Thêm đoạn mã HTML để hiển thị thông báo -->
+																					</div>
 																					<div class="form-group">
 																						<label for="trangThai">Trạng Thái</label>
 																						<div class="btn-group" role="group"
@@ -289,21 +317,118 @@
 																								Động</a>
 																						</div>
 																					</div>
-																					<div class="form-group">
-																						<label for="anh">Ảnh</label>
-																						<div class="custom-file">
-																							<input type="file" name="anh"
-																								class="custom-file-input"> <label
-																								class="custom-file-label" for="anh">Chọn
-																								ảnh</label>
-
-
-																						</div>
-																					</div>
 																					<div class="form-group text-center">
 																						<button type="button"
 																							class="btn btn-primary btn-lg btn-block">Thêm
 																							Mới</button>
+																					</div>
+																				</div>
+																			</form>
+
+																		</div>
+																	</div>
+																</div>
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										
+										<!--  000000000000000000000000000 -->
+											<div class="modal fade" id="modal-edit-${staff.getId()}" tabindex="-1"
+												role="dialog" aria-hidden="true">
+												<div class="modal-dialog modal-lg modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header" style="background: #eb7512;color: white;" >
+															<h4 class="modal-title" id="myCenterModalLabel">Cập Nhật Thông Tin</h4>
+															<button type="button" class="btn btn-default"
+																data-dismiss="modal">Đóng</button>
+														</div>
+														<div class="modal-body">
+															<div class="row">
+																<div class="col-12">
+																	<div class="bg-primary-dark block block-h-auto">
+																		<div class="row edit-product-row">
+																			<form class="contener1-fix" method="POST"
+																				action="/managenment/admin/staff/add.htm"
+																				modelAttribute="taikhoan">
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label for="email">Email Tài Khoản</label> <input
+																							type="email" name="email"  value="${staff.getAccount().getEmail()}"  class="form-control"
+																							required>
+																					</div>
+																					<div class="form-group">
+																						<label for="tenNV">Tên Nhân Viên</label> <input
+																							type="text" name="tenNV" value="${staff.getName()}" class="form-control"
+																							required>
+																					</div>
+																					<div class="form-group">
+																						<label for="cmnd">CMND</label> <input type="text"
+																							name="cmnd" value="${staff.getcMND()}" class="form-control" required>
+																					</div>
+																					<div class="form-group">
+																						<label for="soDT">SĐT</label> <input type="text"
+																							name="soDT" value="${staff.getPhoneNumber()}" class="form-control" required>
+																					</div>
+																					<div class="form-group">
+																						<label for="diaChi">Địa Chỉ</label> <input
+																							type="text" name="diaChi" value="${staff.getAddress()}" class="form-control"
+																							required>
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label for="ngaySinh">Ngày Sinh</label> <input
+																							type="date" name="ngaySinh" value="${staff.getDateOfBirth()}" class="form-control"
+																							required>
+																							<label for="ngaySinh">${staff.getDateOfBirth()}</label>
+																					</div>
+																					<div class="form-group">
+																						<label for="gioiTinh">Giới Tính</label> <select
+																							name="gioiTinh" value="${staff.getGender()}" class="form-control">
+																							<option value="false">Nữ</option>
+																							<option value="true">Nam</option>
+																						</select>
+																					</div>
+																					<div class="form-group">
+																						<label for="role">Chức vụ</label> <select
+																							class="custom-select" id="role" name="role">
+																							<option value="2">Nhân Viên</option>
+																							<option value="1">Quản Lý</option>
+																							
+																							
+																							<!-- Các tùy chọn khác của chức vụ nhân viên -->
+																						</select>
+																					</div>
+
+																					<div class="form-group">
+																						<label for="anh">Ảnh</label>
+																						<div class="custom-file">
+																							<input type="file" name="anh" id="anh"
+																								class="custom-file-input"> <label
+																								class="custom-file-label" for="anh">${staff.getImage() }</label>
+																						</div>
+																						<div id="thongbao1" class="mt-2"></div>
+																						<!-- Thêm đoạn mã HTML để hiển thị thông báo -->
+																					</div>
+																					
+																					<div class="form-group">
+																						<label for="trangThai">Trạng Thái</label>
+																						<select
+																							class="custom-select" id="role" name="role">
+																							<option value="1">Hoạt Động</option>
+																							<option value="2">Nghỉ Việc</option>
+																							
+																							
+																							<!-- Các tùy chọn khác của chức vụ nhân viên -->
+																						</select>
+																					</div>
+																					
+																					<div class="form-group text-center">
+																						<button type="button"
+																							class="btn btn-primary btn-lg btn-block">Cập Nhật</button>
 																					</div>
 																				</div>
 																			</form>
@@ -368,7 +493,18 @@
 			}
 		});
 	</script>
-
+<script>
+document.querySelector('.custom-file-input').addEventListener('change', function(e) {
+  var fileName = e.target.files[0].name; // Lấy tên tệp vừa chọn
+  document.getElementById('thongbao').innerHTML = 'Đã chọn file: ' + fileName; // Hiển thị thông báo
+});
+</script>
+<script>
+document.querySelector('.custom-file').addEventListener('change', function(e) {
+  var fileName = e.target.files[0].name; // Lấy tên tệp vừa chọn
+  document.getElementById('thongbao').innerHTML = 'Đã chọn file: ' + fileName; // Hiển thị thông báo
+});
+</script>
 
 	<script
 		src="<c:url value='/templates/admin/plugins/jquery/jquery.min.js'/>"></script>
