@@ -113,4 +113,17 @@ public class ProductDaoImpl implements IProductDao {
 		return (long) query.uniqueResult();
 	}
 
+	@Override
+	public Product getProductById(String id) {
+		Session s = sessionFactory.openSession();
+
+		String hql = "select sp from Product sp where sp.id = ?";
+
+		Query query = s.createQuery(hql);
+
+		query.setParameter(0, id);
+
+		return (Product) query.list().get(0);
+	}
+
 }

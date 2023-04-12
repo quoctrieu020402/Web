@@ -16,4 +16,6 @@ public interface IProductDao {
 	long getQuantityProductsOfCategory(String categoryId);
 	
 	long getQuantityProductsContainingString(String name);
+	
+	Product getProductById(String id);
 }

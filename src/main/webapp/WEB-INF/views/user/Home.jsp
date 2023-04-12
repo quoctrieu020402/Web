@@ -50,11 +50,11 @@
 
 										</strong>
 									</div>
-									<div class="product__tooltip">
-										<button class="product__tooltip--btn">
-											<span class="product__tooltip--text">Xem chi tiết sản phẩm</span> +
-										</button>
-									</div>
+									 <div class="product__tooltip">
+                                            <button class="product__tooltip--btn" onclick="">
+                                                <span class="product__tooltip--text" onclick="redirectPage(`<c:url value='/user/product/${product.id}'/>`)">Chi tiết sản phẩm</span>
+                                            </button>
+                                      </div>
 								</div>
 							</div>
 						</c:forEach>
