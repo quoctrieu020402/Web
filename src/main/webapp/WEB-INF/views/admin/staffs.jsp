@@ -104,7 +104,7 @@
 										</tr>
 									</thead>
 
-									<tbody>
+									<tbody id="myTable">
 										<c:forEach var="staff" items="${listStaff}">
 											<tr>
 												<td>${staff.getId()}</td>
@@ -499,10 +499,15 @@ document.querySelector('.custom-file-input').addEventListener('change', function
   document.getElementById('thongbao').innerHTML = 'Đã chọn file: ' + fileName; // Hiển thị thông báo
 });
 </script>
+
 <script>
-document.querySelector('.custom-file').addEventListener('change', function(e) {
-  var fileName = e.target.files[0].name; // Lấy tên tệp vừa chọn
-  document.getElementById('thongbao').innerHTML = 'Đã chọn file: ' + fileName; // Hiển thị thông báo
+$(document).ready(function(){
+  $("#search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
 });
 </script>
 

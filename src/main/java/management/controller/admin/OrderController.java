@@ -5,35 +5,36 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 
-import org.hibernate.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
+
 import org.springframework.web.servlet.ModelAndView;
 
+import management.dao.IBillDao;
 import management.dao.IStaffDao;
-import management.entity.Staff;
+import management.entity.Bill;
+
 
 @Controller
 @RequestMapping("/admin/")
 
-public class StaffController {
+public class OrderController {
 
 	@Autowired
-	private IStaffDao staffDao;
+	private IBillDao billDao;
 	
 	
-	@GetMapping("staff")
-	public ModelAndView staff(ModelMap model) {
-		List<Staff>list=staffDao.getListStaff();
+	@GetMapping("order")
+	public ModelAndView bills(ModelMap model) {
+		List<Bill>list=billDao.getListBill();
 		System.out.println("hello"+list.size());
-		model.addAttribute("listStaff", list);
+		model.addAttribute("listBill", list);
 		
-		ModelAndView modelAndView = new ModelAndView("admin/staffs");
+		ModelAndView modelAndView = new ModelAndView("admin/order");
 		return modelAndView;
 	}
 	

@@ -38,4 +38,66 @@ public class Bill {
 	
 	@OneToMany(mappedBy = "bill")
 	private List<DetailsBill> detailsBills = new ArrayList<DetailsBill>();
+
+	public Bill() {
+		super();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Date getApplicableDate() {
+		return applicableDate;
+	}
+
+	public void setApplicableDate(Date applicableDate) {
+		this.applicableDate = applicableDate;
+	}
+
+	public Ship getShip() {
+		return ship;
+	}
+
+	public void setShip(Ship ship) {
+		this.ship = ship;
+	}
+
+	public Staff getStaff() {
+		return staff;
+	}
+
+	public void setStaff(Staff staff) {
+		this.staff = staff;
+	}
+
+	public List<DetailsBill> getDetailsBills() {
+		return detailsBills;
+	}
+
+	public void setDetailsBills(List<DetailsBill> detailsBills) {
+		this.detailsBills = detailsBills;
+	}
+	
+	
 }
