@@ -20,7 +20,7 @@ public class Bill {
 	private String id;
 	
 	@Column(name = "TRANGTHAI")
-	private boolean status;
+	private int status;
 	
 	@Column(name = "NGAYAD")
 	private Date createDate;
@@ -46,16 +46,21 @@ public class Bill {
 	public String getId() {
 		return id;
 	}
+	
+
+	public int getStatus() {
+		return status;
+	}
 
 	public void setId(String id) {
 		this.id = id;
 	}
 
-	public boolean isStatus() {
+	public int isStatus() {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 

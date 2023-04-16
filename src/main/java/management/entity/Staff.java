@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -18,8 +19,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "NHAN_VIEN")
 public class Staff {
 	@Id
+	@GeneratedValue
 	@Column(name = "MANV", length = 10)
-	private String id;
+	private int id;
 	
 	@Column(name = "HO", length = 50)
 	private String surname;
@@ -27,14 +29,14 @@ public class Staff {
 	@Column(name = "TEN", length = 50)
 	private String name;
 	
-	@Column(name = "STD", length = 10)
+	@Column(name = "SDT", length = 10)
 	private String phoneNumber;
 	
 	@Column(name = "CMND", length = 10)
 	private String cMND;
 	
 	@Column(name = "GIOITINH", length = 10)
-	private String gender;
+	private boolean gender;
 	
 	public String getcMND() {
 		return cMND;
@@ -77,11 +79,11 @@ public class Staff {
 		super();
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -109,11 +111,11 @@ public class Staff {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getGender() {
+	public boolean getGender() {
 		return gender;
 	}
 
-	public void setGender(String gender) {
+	public void setGender(boolean gender) {
 		this.gender = gender;
 	}
 

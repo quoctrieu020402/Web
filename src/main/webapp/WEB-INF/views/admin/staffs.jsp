@@ -65,7 +65,7 @@
 
 
 		<section class="content">
-			<form action="<c:url value='/admin/management/staff/list'/>" id="formSubmit" method="get">
+			<div >
 				<div class="container-fluid">
 					<div class="row" style="justify-content: center;"></div>
 					<div class="col-md-12">
@@ -109,7 +109,9 @@
 											<tr>
 												<td>${staff.getId()}</td>
 												<td>${staff.getName()}</td>
-												<td>${staff.getGender()}</td>
+												<td>${staff.getGender()?"Nam":"Nữ"}</td>
+												
+												
 												<td>${staff.getPhoneNumber()}</td>
 												<td>${staff.account.getEmail()}</td>
 												<td>${staff.account.role.getName()}</td>
@@ -151,6 +153,7 @@
 									</div>
 									<!-- /.modal-dialog -->
 								</div>
+										
 											<div class="modal fade" id="modal-${staff.getId()}">
 												<div class="modal-dialog modal-lg">
 													<div class="modal-content ">
@@ -188,7 +191,7 @@
 																						class="float-right text-primary">${staff.getSurname()}
 																							${staff.getName()}</a></li>
 																					<li class="list-group-item"><b>Giới tính</b> <a
-																						class="float-right text-primary">${staff.getGender()}</a>
+																						class="float-right text-primary">${staff.getGender()?"Nam":"Nữ"}</a>
 																					</li>
 																					<li class="list-group-item"><b>Ngày sinh</b> <a
 																						class="float-right text-primary">${staff.dateOfBirth}</a>
@@ -227,114 +230,6 @@
 												<!-- /.modal-dialog -->
 											</div>
 
-											<!--  000000000000000000000000000 -->
-											<div class="modal fade" id="modal-add" tabindex="-1"
-												role="dialog" aria-hidden="true">
-												<div class="modal-dialog modal-lg modal-dialog-centered">
-													<div class="modal-content">
-														<div class="modal-header" style="background: #0f982e;color: white;">
-															<h4 class="modal-title" id="myCenterModalLabel">Thêm
-																Mới Nhân Viên</h4>
-															<button type="button" class="btn btn-default"
-																data-dismiss="modal">Đóng</button>
-														</div>
-														<div class="modal-body">
-															<div class="row">
-																<div class="col-12">
-																	<div class="bg-primary-dark block block-h-auto">
-																		<div class="row edit-product-row">
-																			<form class="contener1-fix" method="POST"
-																				action="/managenment/admin/staff/add.htm"
-																				modelAttribute="taikhoan">
-																				<div class="col-md-6">
-																					<div class="form-group">
-																						<label for="email">Email Tài Khoản</label> <input
-																							type="email" name="email" class="form-control"
-																							required>
-																					</div>
-																					<div class="form-group">
-																						<label for="tenNV">Tên Nhân Viên</label> <input
-																							type="text" name="tenNV" class="form-control"
-																							required>
-																					</div>
-																					<div class="form-group">
-																						<label for="cmnd">CMND</label> <input type="text"
-																							name="cmnd" class="form-control" required>
-																					</div>
-																					<div class="form-group">
-																						<label for="soDT">SĐT</label> <input type="text"
-																							name="soDT" class="form-control" required>
-																					</div>
-																					<div class="form-group">
-																						<label for="diaChi">Địa Chỉ</label> <input
-																							type="text" name="diaChi" class="form-control"
-																							required>
-																					</div>
-																				</div>
-																				<div class="col-md-6">
-																					<div class="form-group">
-																						<label for="ngaySinh">Ngày Sinh</label> <input
-																							type="date" name="ngaySinh" class="form-control"
-																							required>
-																					</div>
-																					<div class="form-group">
-																						<label for="gioiTinh">Giới Tính</label> <select
-																							name="gioiTinh" class="form-control">
-																							<option value="false">Nữ</option>
-																							<option value="true">Nam</option>
-																						</select>
-																					</div>
-																					
-																					
-																					
-																					
-																					<div class="form-group">
-																						<label for="role">Chức vụ</label> <select
-																							class="custom-select" id="role" name="role">
-																							<option value="2">Nhân Viên</option>
-																							<option value="1">Quản Lý</option>
-																							
-																							
-																							<!-- Các tùy chọn khác của chức vụ nhân viên -->
-																						</select>
-																					</div>
-																					<div class="form-group">
-																						<label for="anh">Ảnh</label>
-																						<div class="custom-file">
-																							<input type="file" name="anh" id="anh"
-																								class="custom-file-input"> <label
-																								class="custom-file-label" for="anh">Chọn
-																								ảnh</label>
-																						</div>
-																						<div id="thongbao" class="mt-2"></div>
-																						<!-- Thêm đoạn mã HTML để hiển thị thông báo -->
-																					</div>
-																					<div class="form-group">
-																						<label for="trangThai">Trạng Thái</label>
-																						<div class="btn-group" role="group"
-																							aria-label="Trạng Thái">
-																							<a href="#" class="btn btn-outline-primary">Hoạt
-																								Động</a>
-																						</div>
-																					</div>
-																					<div class="form-group text-center">
-																						<button type="button"
-																							class="btn btn-primary btn-lg btn-block">Thêm
-																							Mới</button>
-																					</div>
-																				</div>
-																			</form>
-
-																		</div>
-																	</div>
-																</div>
-
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										
 										<!--  000000000000000000000000000 -->
 											<div class="modal fade" id="modal-edit-${staff.getId()}" tabindex="-1"
 												role="dialog" aria-hidden="true">
@@ -383,20 +278,23 @@
 																						<label for="ngaySinh">Ngày Sinh</label> <input
 																							type="date" name="ngaySinh" value="${staff.getDateOfBirth()}" class="form-control"
 																							required>
-																							<label for="ngaySinh">${staff.getDateOfBirth()}</label>
+																							<label for="ngaySinh"></label>
 																					</div>
 																					<div class="form-group">
-																						<label for="gioiTinh">Giới Tính</label> <select
-																							name="gioiTinh" value="${staff.getGender()}" class="form-control">
-																							<option value="false">Nữ</option>
-																							<option value="true">Nam</option>
+																						<label for="gioiTinh">Giới Tính</label> 
+																						<select name="gioiTinh" class="form-control">
+																							<option value="Nam"
+																								${staff.getGender() == true ? "selected" : ""}>Nam</option>
+																							<option value="Nữ"
+																								${staff.getGender() == false? "selected" : ""}>Nữ</option>
 																						</select>
+
 																					</div>
 																					<div class="form-group">
 																						<label for="role">Chức vụ</label> <select
 																							class="custom-select" id="role" name="role">
-																							<option value="2">Nhân Viên</option>
-																							<option value="1">Quản Lý</option>
+																							<option value="NV">Nhân Viên</option>
+																							<option value="QL">Quản Lý</option>
 																							
 																							
 																							<!-- Các tùy chọn khác của chức vụ nhân viên -->
@@ -447,7 +345,118 @@
 										</c:forEach>
 									
 									</tbody>
+									
+											<!--  000000000000000000000000000 -->
+											<div class="modal fade" id="modal-add" tabindex="-1"
+												role="dialog" aria-hidden="true">
+												<div class="modal-dialog modal-lg modal-dialog-centered">
+													<div class="modal-content">
+														<div class="modal-header" style="background: #0f982e;color: white;">
+															<h4 class="modal-title" id="myCenterModalLabel">Thêm
+																Mới Nhân Viên</h4>
+															<button type="button" class="btn btn-default"
+																data-dismiss="modal">Đóng</button>
+														</div>
+														<div class="modal-body">
+															<div class="row">
+																<div class="col-12">
+																	<div class="bg-primary-dark block block-h-auto">
+																		<div class="row edit-product-row">
+																			<form class="contener1-fix" method="POST"
+																				action="/management/admin/staff/add"
+																				modelAttribute="taikhoan">
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label for="email">Email Tài Khoản</label> <input
+																							type="email" name="email" class="form-control"
+																							required>
+																					</div>
+																					<div class="form-group">
+																						<label for="tenNV">Tên Nhân Viên</label> <input
+																							type="text" name="tenNV" class="form-control"
+																							required>
+																					</div>
+																					<div class="form-group">
+																						<label for="cmnd">CMND</label> <input type="text"
+																							name="cmnd" class="form-control" required>
+																					</div>
+																					<div class="form-group">
+																						<label for="soDT">SĐT</label> <input type="text"
+																							name="soDT" class="form-control" required>
+																					</div>
+																					<div class="form-group">
+																						<label for="diaChi">Địa Chỉ</label> <input
+																							type="text" name="diaChi" class="form-control"
+																							required>
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label for="ngaySinh">Ngày Sinh</label> <input
+																							type="date" name="ngaySinh" class="form-control"
+																							required>
+																					</div>
+																					<div class="form-group">
+																						<label for="gioiTinh">Giới Tính</label> <select
+																							name="gioiTinh" class="form-control">
+																							
+																							<option value="true">Nam</option>
+																							<option value="false">Nữ</option>
+																						</select>
+																					</div>
+																					
+																					
+																					
+																					
+																					<div class="form-group">
+																						<label for="role">Chức vụ</label> <select
+																							class="custom-select" id="role" name="role">
+																							<option value="NV">Nhân Viên</option>
+																							<option value="QL">Quản Lý</option>
+																							
+																							
+																							<!-- Các tùy chọn khác của chức vụ nhân viên -->
+																						</select>
+																					</div>
+																					<div class="form-group">
+																						<label for="anh">Ảnh</label>
+																						<div class="custom-file">
+																							<input type="file" name="anh" id="anh"
+																								class="custom-file-input" value=".../img"> <label
+																								class="custom-file-label" for="anh">Chọn
+																								ảnh</label>
+																						</div>
+																						<div id="thongbao" class="mt-2"></div>
+																						<!-- Thêm đoạn mã HTML để hiển thị thông báo -->
+																					</div>
+																					<div class="form-group">
+																						<label for="trangThai">Trạng Thái</label>
+																						<div class="btn-group" role="group"
+																							aria-label="Trạng Thái">
+																							<a href="#" class="btn btn-outline-primary">Hoạt
+																								Động</a>
+																						</div>
+																					</div>
+																					<div class="form-group text-center">
+																						<button type="submit"
+																							class="btn btn-primary btn-lg btn-block">Thêm
+																							Mới</button>
+																					</div>
+																				</div>
+																			</form>
+
+																		</div>
+																	</div>
+																</div>
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										
 								</table>
+								
 
 
 							</div>
@@ -463,7 +472,7 @@
 						<!-- /.card -->
 					</div>
 				
-			</form>
+			</div>
 
 		</section>
 
