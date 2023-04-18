@@ -1,17 +1,12 @@
 package management.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +19,6 @@ public class DetailsCart {
 	@ManyToOne
 	private Customer customer;
 	
-
 	@ManyToOne
 	private DetailsUpdatePrice detailsUpdatePrice; 
 	
@@ -34,7 +28,9 @@ public class DetailsCart {
 	@Column(name = "TRANGTHAI")
 	private boolean status;
 	
-	@OneToMany(mappedBy = "detailsCart")
-	private List<DetailsBill> detailsBills = new ArrayList<DetailsBill>();
+	@ManyToOne
+	@JoinColumn(name="MAHD", nullable=false)
+	private Bill bill;
+	
 	
 }

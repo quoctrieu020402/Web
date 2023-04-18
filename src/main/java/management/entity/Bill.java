@@ -37,7 +37,7 @@ public class Bill {
 	private Staff staff;
 	
 	@OneToMany(mappedBy = "bill")
-	private List<DetailsBill> detailsBills = new ArrayList<DetailsBill>();
+	private List<DetailsCart> detailsCarts;
 
 	public Bill() {
 		super();
@@ -96,13 +96,7 @@ public class Bill {
 		this.staff = staff;
 	}
 
-	public List<DetailsBill> getDetailsBills() {
-		return detailsBills;
-	}
 
-	public void setDetailsBills(List<DetailsBill> detailsBills) {
-		this.detailsBills = detailsBills;
-	}
 	
 	
 }
