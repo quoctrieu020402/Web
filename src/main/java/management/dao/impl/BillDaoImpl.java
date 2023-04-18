@@ -28,8 +28,9 @@ public class BillDaoImpl implements IBillDao{
 	public long getCountBill() {
 		Session session=sessionFactory.openSession();
 		Query query = session.createQuery("select count(*) from Bill");
-		session.close();
+		
 		Long l= (Long)query.uniqueResult();
+		session.close();
 		return l;
 		
 	}
