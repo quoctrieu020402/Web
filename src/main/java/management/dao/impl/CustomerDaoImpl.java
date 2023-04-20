@@ -1,9 +1,7 @@
 package management.dao.impl;
 
-
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
-
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -23,7 +21,7 @@ public class CustomerDaoImpl implements ICustomerDao{
 	private SessionFactory sessionFactory;
 
 	@Override
-	public Customer createCustomer(Customer customer) {
+	public Customer createCustomer(final Customer customer) {
 		
 		Session s = sessionFactory.openSession();
 		
@@ -33,9 +31,7 @@ public class CustomerDaoImpl implements ICustomerDao{
 			
 			String saveCustomer = (String) s.save(customer);
 			
-			System.out.println(saveCustomer);
 			
-			System.out.println(saveCustomer);
 			
 			s.getTransaction().commit();
 			
@@ -52,33 +48,19 @@ public class CustomerDaoImpl implements ICustomerDao{
 		
 		return null;
 	}
-
 	@Override
-	public Long getNumberOfCustomer() {
-		
-		Session s = sessionFactory.openSession();
-		
-		String hql = "select count(kh.id) from Customer kh";
-		
-		Query query = s.createQuery(hql);
-		
-		Iterator count = query.iterate();
-		
-		return (Long) count.next();
-	}
-	
-	@Override
-		public List<Customer> getListCustomer() {
-		
-		Session session = sessionFactory.openSession();
-		
-		String hgl = "From Customer";
-		
-		Query query = session.createQuery(hgl);
-		
-		List<Customer> list = query.list();
-		
+	public List<Customer> Getlist_Customer()
+	{
+		List<Customer> list = new ArrayList<>();
+		try {
+			Session session = sessionFactory.openSession();
+			String hqlString="FROM Customer";
+			Query query = session.createQuery(hqlString);
+			 list = query.list();
+			 session.close();
+		} catch (Exception e) {
+			System.out.println("63_Customer");
+		}
 		return list;
 	}
-	
 }

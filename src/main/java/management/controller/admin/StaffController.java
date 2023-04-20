@@ -71,15 +71,15 @@ public class StaffController {
 		String password = "01234567";
 		
 		
-		Account tkhoan = accountDao.checkEmail(email);
+		//Account tkhoan = accountDao.checkEmail(email);
 		
 		
-		if (tkhoan != null) {
-			errors.rejectValue("email", "taikhoan", "Tài Khoản Đã tồn Tại");
-			redirectAttributes.addFlashAttribute("message",
-					new Message("error","Thêm mới thất bại do trùng email"));
-			return "redirect:/admin/staff";
-		}
+//		if (tkhoan != null) {
+//			errors.rejectValue("email", "taikhoan", "Tài Khoản Đã tồn Tại");
+//			redirectAttributes.addFlashAttribute("message",
+//					new Message("error","Thêm mới thất bại do trùng email"));
+//			return "redirect:/admin/staff";
+//		}
 		
 			
 		
@@ -139,15 +139,15 @@ public class StaffController {
 		Date ngaySinhDate = formatter.parse(ngaySinh);
 		String password = "01234567";
 		
-		Account tkhoan = accountDao.checkEmail(email);
-		
-		
-		if (tkhoan != null) {
-			errors.rejectValue("email", "taikhoan", "Tài Khoản Đã tồn Tại");
-			redirectAttributes.addFlashAttribute("message",
-					new Message("error","Thêm mới thất bại do trùng email"));
-			return "redirect:/admin/staff";
-		}
+//		Account tkhoan = accountDao.checkEmail(email);
+//		
+//		
+//		if (tkhoan != null) {
+//			errors.rejectValue("email", "taikhoan", "Tài Khoản Đã tồn Tại");
+//			redirectAttributes.addFlashAttribute("message",
+//					new Message("error","Thêm mới thất bại do trùng email"));
+//			return "redirect:/admin/staff";
+//		}
 		
 			
 		
