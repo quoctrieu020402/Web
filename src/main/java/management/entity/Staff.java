@@ -1,8 +1,11 @@
 package management.entity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -190,5 +193,20 @@ public class Staff {
 	public void setDetailsUpdatePrices(List<DetailsUpdatePrice> detailsUpdatePrices) {
 		this.detailsUpdatePrices = detailsUpdatePrices;
 	}
+	
+	
+	public String getBirthDaytoString() throws ParseException {
+	    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+	    String ngaySinhString = formatter.format(this.getDateOfBirth());
+	    return ngaySinhString;
+	    
+	}
+	public String getBirthDaytoStringYMD() throws ParseException {
+	    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+	    String ngaySinhString = formatter.format(this.getDateOfBirth());
+	    return ngaySinhString;
+	    
+	}
+
 	
 }

@@ -29,14 +29,12 @@
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   
   
-  <link rel="stylesheet" href="css/style.min.css">
   
   
   
   
-  <link rel="stylesheet" href="css/employee.css">
-  <link rel="stylesheet" href="css/detail-test.css">
-  <link rel="stylesheet" href="css/fix-test.css">
+  
+  
   <link rel="stylesheet" href="<c:url value='/templates/css/alertify.min.css'/>" />
   
   
@@ -275,10 +273,12 @@
 																				</div>
 																				<div class="col-md-6">
 																					<div class="form-group">
-																						<label for="ngaySinh">Ngày Sinh</label> <input
+																						<label for="ngaySinh">Ngày Sinh</label>
+																						
+																						<input
 																							type="date" name="ngaySinh" value="${staff.getDateOfBirth()}" class="form-control"
 																							required>
-																							<label for="ngaySinh"></label>
+																							
 																					</div>
 																					<div class="form-group">
 																						<label for="gioiTinh">Giới Tính</label> 

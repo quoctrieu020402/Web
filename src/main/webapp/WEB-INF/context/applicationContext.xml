@@ -13,7 +13,7 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		p:driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 		p:url="jdbc:sqlserver://localhost:1433;Database=management;encrypt=true;trustServerCertificate=true;"
-		p:username="buiquoctrieu" p:password="020402">
+		p:username="sa" p:password="19001005">
 		
 	</bean>
 	<!-- Cấu hình Hibernate -->
@@ -24,7 +24,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
 		<property name="packagesToScan" value="management.entity" />

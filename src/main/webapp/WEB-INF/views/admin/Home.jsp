@@ -55,7 +55,7 @@
 
 							<div class="info-box-content">
 								<span class="info-box-text">Đơn Đặt Hàng</span> <span
-									class="info-box-number">${countBill }</span>
+									class="info-box-number">0</span>
 							</div>
 						</div>
 					</div>
@@ -70,7 +70,7 @@
 
 							<div class="info-box-content">
 								<span class="info-box-text">Khách Hàng</span> <span
-									class="info-box-number">${countCustomer}</span>
+									class="info-box-number"></span>
 							</div>
 						</div>
 					</div>
@@ -81,7 +81,7 @@
 
 							<div class="info-box-content">
 								<span class="info-box-text">Nhân Viên</span> <span
-									class="info-box-number">${countStaff}</span>
+									class="info-box-number"></span>
 							</div>
 						</div>
 					</div>
