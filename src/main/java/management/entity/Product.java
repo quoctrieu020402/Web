@@ -38,10 +38,10 @@ public class Product {
 	private boolean status;
 	
 	@Column(name = "THOIGIANBH", length = 10)
-	private String warrantyPeriod;
+	private Date warrantyPeriod;
 	
 	@Column(name = "THOIGIANTRAHANG", length = 10)
-	private String deliveryTime;
+	private Date deliveryTime;
 	
 	@OneToOne(mappedBy = "product")
 	private Seri seri;
@@ -100,19 +100,19 @@ public class Product {
 		this.branch = branch;
 	}
 
-	public String getWarrantyPeriod() {
+	public Date getWarrantyPeriod() {
 		return warrantyPeriod;
 	}
 
-	public void setWarrantyPeriod(String warrantyPeriod) {
+	public void setWarrantyPeriod(Date warrantyPeriod) {
 		this.warrantyPeriod = warrantyPeriod;
 	}
 
-	public String getDeliveryTime() {
+	public Date getDeliveryTime() {
 		return deliveryTime;
 	}
 
-	public void setDeliveryTime(String deliveryTime) {
+	public void setDeliveryTime(Date deliveryTime) {
 		this.deliveryTime = deliveryTime;
 	}
 
